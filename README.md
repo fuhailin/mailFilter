@@ -1,5 +1,7 @@
 ﻿#mailFilter V2.0
 
+详细介绍请转到我博客里的这篇博文：https://fuhailin.github.io/2018/12/04/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%9E%83%E5%9C%BE%E9%82%AE%E4%BB%B6%E5%88%86%E7%B1%BB%E5%AE%9E%E6%88%98/
+
 ### 原理简介
 
 基于贝叶斯推断的垃圾邮件过滤器。通过8000封正常邮件和8000封垃圾邮件“训练”过滤器:
@@ -25,9 +27,16 @@
 
 > 注:如果新收到的邮件中有的词在史料库中还没出现过，就假定p(s|w) = 0.4
 
+### 中文邮件数据集
+
+`trec06c`是一个公开的垃圾邮件语料库，由国际文本检索会议提供，分为英文数据集（trec06p）和中文数据集（trec06c），其中所含的邮件均来源于真实邮件保留了邮件的原有格式和内容。
+
+文件下载地址：[trec06c](https://plg.uwaterloo.ca/~gvcormac/treccorpus06/)
+百度网盘备份链接：[trec06c](https://pan.baidu.com/s/1LEEN1aDbR22D_b1u07yTQw)
+
 ### 使用
 
-1. 解压data.rar到`./input/trec06c`文件夹
+1. 解压data.rar到`./input`文件夹
 2. 启动一个终端，模拟邮件服务器
 
 		cd mailFilter
