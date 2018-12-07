@@ -6,12 +6,13 @@ if __name__ == '__main__':
 	host = 'localhost'
 	port = 8888
 	try:
-		fi = str(sys.argv[1])
+		fi = "./input/testMail.txt"
 		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		msg = open(fi).read()
+		msg = open(fi, encoding='utf-8').read()
 		s.connect((host, port))
-		s.sendall(msg)
-		s.close()		
+		s.sendall(msg.encode())
+		s.close()
+		print("发送成功！")
 	except:
-		print "error: Input the email location"
+		print("error: Input the email location")
 
