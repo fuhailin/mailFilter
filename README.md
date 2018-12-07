@@ -36,7 +36,7 @@
 
 ### 使用
 
-1. 解压data.rar到`./input`文件夹
+1. 解压trec06c.tgz到`./input`文件夹
 2. 启动一个终端，模拟邮件服务器
 
 		cd mailFilter
