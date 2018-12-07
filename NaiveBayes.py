@@ -32,7 +32,7 @@ class NaiveBayes(object):
         test = []
         for i in res:
             for j in self.regex.findall(i):
-                if j is not None and j.strip() != '':
+                if j is not None and j.strip() != '' and len(j) > 1:
                     test.append(j)
         # res = [i for i in res if i.strip() != '' and i is not None]
         self.wordlist[label].extend(test)
