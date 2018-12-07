@@ -1,4 +1,4 @@
-﻿#mailFilter V1.2
+﻿#mailFilter V2.0
 
 ### 原理简介
 
@@ -18,32 +18,29 @@
 
 					p(s|w1)p(s|w2)...p(s|w15)
 		p = ---------------------------------------------------------------
-			p(s|w1)p(s|w2)...p(s|w15) + (1-p(s|w1))(1-p(s|w2)...(1-p(s|w15)))			
+			p(s|w1)p(s|w2)...p(s|w15) + (1-p(s|w1))(1-p(s|w2)...(1-p(s|w15)))
 
-4. 设定阈值 p > 0.9 :垃圾邮件  
-            p < 0.9 :正常邮件  
+4. 设定阈值 p > 0.9 :垃圾邮件
+            p < 0.9 :正常邮件
 
 > 注:如果新收到的邮件中有的词在史料库中还没出现过，就假定p(s|w) = 0.4
 
 ### 使用
 
-1. 解压data.rar到当前文件夹  
+1. 解压data.rar到`./input/trec06c`文件夹
 2. 启动一个终端，模拟邮件服务器
 
 		cd mailFilter
 		python server.py
 
-   	
+
 3. 等到出现 "Waiting for clients..."，启动另一终端，模拟邮件发送端
 
 		cd mailFilter
-		python client.py emaillocation
-		
-**注意使用Python 2.7版本**		
+		python client.py
+
+**使用的是Python 3.6版本**
 
 ### 参考资料
-[http://www.ruanyifeng.com/blog/2011/08/bayesian_inference_part_two.html](http://www.ruanyifeng.com/blog/2011/08/bayesian_inference_part_two.html)  
-[http://en.wikipedia.org/wiki/Bayesian_spam_filtering](http://en.wikipedia.org/wiki/Bayesian_spam_filtering)  
-
-
-
+[http://www.ruanyifeng.com/blog/2011/08/bayesian_inference_part_two.html](http://www.ruanyifeng.com/blog/2011/08/bayesian_inference_part_two.html)
+[http://en.wikipedia.org/wiki/Bayesian_spam_filtering](http://en.wikipedia.org/wiki/Bayesian_spam_filtering)
